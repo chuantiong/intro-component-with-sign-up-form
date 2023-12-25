@@ -30,6 +30,6 @@ const App = () => {
       <Attribution />
     </>
   )
-}
+};
 
 export default App;
