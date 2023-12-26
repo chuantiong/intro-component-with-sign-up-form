@@ -15,7 +15,6 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #FF7979;
-
     height: 100vh;
 }
 
@@ -25,7 +24,13 @@ h1, h4, h5, p {
 
 .main {
     background-color: #FF7979;
-    background-image: url('./assets/bg-intro-mobile.png')
+    background-image: url('./assets/bg-intro-mobile.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 4rem;
 }
 
 .container {
@@ -38,6 +43,7 @@ h1, h4, h5, p {
 .hero {
     width: 100%;
     min-width: 327px;
+    max-width: 525px;
     color: #fff;
     text-align: center;
 
@@ -49,18 +55,26 @@ h1, h4, h5, p {
     }
 
     &__description {
+        font-size: 1rem;
         font-weight: 500;
         line-height: 1.625rem;
         margin-top: 1em;
     }
 }
 
+.free-trial {
+    width: 100%;
+    min-width: 327px;
+    max-width: 540px;
+}
+
 .pricing {
     background-color: $clr-accent;
     color: #fff;
     text-align: center;
-    margin-block: 4rem 1.5rem;
-    padding: 1.13rem 4.15rem;
+    // margin-block: 4rem 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1.07rem 4.15rem;
     border-radius: 0.625rem;
     box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.15);
     
@@ -76,7 +90,7 @@ h1, h4, h5, p {
     }
 }
 
-.free-trial {
+.claim {
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 0.625rem;
@@ -89,26 +103,57 @@ h1, h4, h5, p {
         margin-bottom: .5rem;
     }
 
-    &__input {
-        color: $clr-dark-blue;
-        width: 100%;
-        font-size: 0.875rem;
-        font-weight: 600;
-        line-height: 1.625rem;
-        letter-spacing: 0.01563rem;
-        padding: 1.07em 1.035em;
-        border-radius: 0.3125rem;
-        border: 1px solid #DEDEDE;
-
-        &::placeholder {
-            color: #3D3B48;
-            opacity: .75;
+    
+    .input {
+        &__input-wrapper {
+            position: relative;
         }
-
-        &:focus {
-            outline: 1px solid $clr-accent;
+        
+        &__input-field {
+            width: 100%;
+            display: block;
+            color: $clr-dark-blue;
+            font-size: 0.875rem;
+            font-weight: 600;
+            line-height: 1.625rem;
+            letter-spacing: 0.01563rem;
+            text-transform: capitalize;
+            padding: 1.07em 1.035em;
+            border: 1px solid #DEDEDE;
+            border-radius: 0.3125rem;
+    
+            &::placeholder {
+                color: #3D3B48;
+                opacity: .75;
+            }
+    
+            &:focus {
+                outline: 1px solid $clr-accent;
+            }
+        }
+        
+        &__error-icon {
+            // display: none;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(-1.69rem, -50%);
+        }
+    
+        &__error {
+            display: block;
+            width: 100%;
+            // display: none;
+            color: #FF7979;
+            font-size: 0.6875rem;
+            font-weight: 500;
+            font-style: italic;
+            text-align: end;
+            margin-top: .545em;
         }
     }
+
+
 
     &__button {
         background-color: #38CC8B;
@@ -160,5 +205,34 @@ h1, h4, h5, p {
     &__link {
         color: #fff;
         font-weight: 600;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .main {
+        flex-direction: row;
+        gap: 2.81rem;
+    }
+
+    .container {
+        padding: 7.56rem 10.31rem;
+    }
+
+    .hero {
+        text-align: start;
+
+        &__title {
+            font-size: 3.125rem;
+            line-height: 3.4375rem;
+            letter-spacing: -0.03256rem;
+        }
+    
+        &__description {
+            margin-top: 2em;
+        }
+    }
+
+    .claim {
+        padding: 2.5rem;
     }
 }
