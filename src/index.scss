@@ -198,6 +198,8 @@ h1, h4, h5, p {
     opacity: .9;
     padding: 2rem;
     margin: 0;
+    position: absolute;
+    bottom: 0;
 
     &__text {
         color: #fff;
