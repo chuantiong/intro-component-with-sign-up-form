@@ -131,9 +131,13 @@ h1, h4, h5, p {
                 outline: 1px solid $clr-accent;
             }
         }
+
+        &__input-field.error {
+            outline: 2px solid #FF7979;
+        }
         
         &__error-icon {
-            // display: none;
+            display: none;
             position: absolute;
             top: 50%;
             right: 0;
@@ -141,9 +145,8 @@ h1, h4, h5, p {
         }
     
         &__error {
-            display: block;
+            display: none;
             width: 100%;
-            // display: none;
             color: #FF7979;
             font-size: 0.6875rem;
             font-weight: 500;
@@ -208,7 +211,7 @@ h1, h4, h5, p {
     }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
     .main {
         flex-direction: row;
         gap: 2.81rem;
